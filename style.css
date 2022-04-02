@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.consoles {
+    display: flex;
+    text-align: center;
+}
+
+.ps5,
+.xbox {
+    width: 50%;
+    height: 100vh;
+}
+
+.ps5,
+.xbox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: 0.5s;
+}
+
+.ps5::before,
+.xbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.ps5::before {
+    background-color: rgb(0 0 255 / 40%);
+}
+.xbox::before {
+    background-color: rgb(0 0 0 / 45%);
+}
+
+.move {
+    width: calc(95% + 100px);
+}
+
+.ps5 {
+    background-image: url("imgs/ps5.jpg");
+    background-size: cover;
+}
+
+.xbox {
+    background-image: url("imgs/xbox.jpg");
+    background-size: cover;
+}
+
+.ps5 h1,
+.xbox h1 {
+    transform: translateY(-30px);
+    font-size: 3.2rem;
+    color: white;
+}
+
+.ps5 button,
+.xbox button {
+    padding: 25px 80px;
+    background-color: transparent;
+    border: 3px solid white;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.ps5 button:hover {
+    background-color: rgb(59, 59, 250);
+    border-color: rgb(59, 59, 250);
+}
+
+.xbox button:hover {
+    background-color: green;
+    border-color: green;
+}
